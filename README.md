@@ -11,4 +11,4 @@ This is a timed coding quiz that takes a users name and score and keeps it in th
 To install my quiz clone the repo then navigate to where you want it to be cloned through your terminal. from there run 'git clone "the cloned url here"'.
 
 ## Link
-![Brainiac Quiz](https://bvatuvei.github.io/Brainiacs/)
+[Brainiac Quiz](https://bvatuvei.github.io/Brainiacs/)
