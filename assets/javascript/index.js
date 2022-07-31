@@ -3,9 +3,10 @@ var startBtn = document.querySelector("#startBtn");
 var indexTimer = document.querySelector("#indexTimer");
 var indexBody = document.querySelector("#indexBody");
 var startingHtml = document.querySelector("#startingHtml");
-var localStoragePlayerName = document.querySelector('#nameInput');
+var inputName = document.getElementById('nameInput');
+var nameBtn = document.getElementById('nameBtn');
 var currentScore = 0;
-var timeLeft = 5;
+var timeLeft = 15;
 var questionIndex = 0;
 var questionArr = [
     function question1() {
@@ -141,7 +142,6 @@ var questionArr = [
 ]
 
 function startGame() {
-    localStorage.setItem('name', localStoragePlayerName);
   startingHtml.remove();
   setTimer();
   nextQuestion();
@@ -184,8 +184,11 @@ function endQuiz() {
 localStorage.setItem('score', currentScore);
 indexBody.textContent = '';
 document.getElementById('indexBody').innerHTML="Your score is " + currentScore + "!";
-var localStorageHighScore = localStorage.getItem('score');
-document.getElementById('highScoresBody').innerHTML=localStorageHighScore;
 }
+
+
+nameBtn.addEventListener('click', function() {
+    localStorage.setItem('name', inputName.value)
+})
 
 startBtn.addEventListener("click", startGame);
