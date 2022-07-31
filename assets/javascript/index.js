@@ -4,7 +4,6 @@ var indexTimer = document.querySelector("#indexTimer");
 var indexBody = document.querySelector("#indexBody");
 var startingHtml = document.querySelector("#startingHtml");
 var localStoragePlayerName = document.querySelector('#nameInput');
-var localStorageHighScore = localStorage.getItem('score');
 var currentScore = 0;
 var timeLeft = 5;
 var questionIndex = 0;
@@ -185,7 +184,8 @@ function endQuiz() {
 localStorage.setItem('score', currentScore);
 indexBody.textContent = '';
 document.getElementById('indexBody').innerHTML="Your score is " + currentScore + "!";
-document.getElementById('highScoresBody').innerHTML='stuff';
+var localStorageHighScore = localStorage.getItem('score');
+document.getElementById('highScoresBody').innerHTML=localStorageHighScore;
 }
 
 startBtn.addEventListener("click", startGame);
